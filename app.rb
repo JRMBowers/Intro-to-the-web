@@ -1,12 +1,15 @@
 require 'sinatra' 
 require "sinatra/reloader" if development?
 
+get '/' do 
+  'hello'
+end 
+
 get '/hello' do
   'hello'
 end 
 
 get '/cat' do 
-  "<div>
-  <img src='https://i.imgur.com/jFaSxym.png'>
-  </div>"
+  @name = ["Willow", "Masie"].sample
+  erb :index
 end 
